@@ -1,0 +1,41 @@
+{% load static %} <!-- Carrega a tag estática do Django para usar em arquivos estáticos -->
+
+<!DOCTYPE html> <!-- Define o documento como HTML5 -->
+<html lang="pt-br"> <!-- Inicia o documento HTML e define o idioma da página como português brasileiro -->
+
+<head> <!-- Inicia a seção de cabeçalho do documento -->
+    <meta charset="UTF-8">
+    <title>Django 1</title> <!-- Define o título da página que é exibido na guia do navegador -->
+    <link rel="stylesheet" href="{% static 'css/estilos.css' %}"> <!-- Vincula o arquivo de estilo CSS 'estilos.css' à página -->
+</head>
+<body>
+    <center> <!-- Centraliza o conteúdo dentro da tag -->
+        <h1>Index</h1> <!-- Cria um cabeçalho de nível 1 com o texto 'Index' -->
+        <img src="{% static 'images/django.png' %}"> <!-- Exibe uma imagem estática chamada 'django.png' -->
+        <h2>{{curso}}</h2> <!-- Cria um cabeçalho de nível 2 que exibirá o valor da variável 'curso' -->
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Produto</th> <!-- Cria uma célula de cabeçalho com o texto 'Produto' -->
+                    <th>Preço</th> <!-- Cria uma célula de cabeçalho com o texto 'Preço' -->
+                </tr>
+            </thead>
+
+            <tbody>
+                {% for produto in produtos%} <!-- Inicia um loop for para iterar sobre cada 'produto' na lista de 'produtos' -->
+                    <tr>
+                        <td><a href="{% url 'produto' produto.id %}" > {{produto.nome}}</a></td> <!-- Cria uma célula de dados com um link para a página do produto e o nome do produto -->
+                        <td>{{produto.preco}}</td> <!-- Cria uma célula de dados que exibirá o preço do produto -->
+                    </tr>
+                {% endfor %} <!-- Termina o loop for -->
+            </tbody>
+        </table>
+
+        <button onclick="teste();">Clique-me</button> <!-- Cria um botão que, quando clicado, chamará a função JavaScript 'teste()' -->
+    </center> <!-- Termina a tag de centralização -->
+
+    <script type="text/javascript" src="{% static 'js/script.js' %}"></script> <!-- Vincula o arquivo JavaScript 'script.js' à página -->
+</body>
+
+</html>

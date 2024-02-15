@@ -1,0 +1,7 @@
+__pycache__  # Ignora todos os diretórios chamados __pycache__. Estes diretórios são criados pelo Python e contêm arquivos de bytecode que são usados para acelerar a inicialização do programa.
+
+*.*~  # Ignora todos os arquivos que terminam com um til (~). Estes são geralmente arquivos temporários criados por editores de texto.
+
+*.pyc  # Ignora todos os arquivos que terminam com .pyc. Estes são arquivos de bytecode compilados do Python.
+
+*.idea  # Ignora todos os arquivos e diretórios chamados .idea. Estes são arquivos de configuração criados pelo PyCharm, um IDE popular para Python.
